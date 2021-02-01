@@ -48,12 +48,10 @@ namespace Tarea_3_RegistroDeUsuario
             this.NuevoButton = new System.Windows.Forms.Button();
             this.BuscarButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
-            this.EditarButton = new System.Windows.Forms.Button();
             this.EliminarButton = new System.Windows.Forms.Button();
             this.UsuarioIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.RolIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.RolIdoComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioIdNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RolIdNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // NombreLabel
@@ -192,7 +190,7 @@ namespace Tarea_3_RegistroDeUsuario
             // 
             this.NuevoButton.Image = ((System.Drawing.Image)(resources.GetObject("NuevoButton.Image")));
             this.NuevoButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.NuevoButton.Location = new System.Drawing.Point(184, 166);
+            this.NuevoButton.Location = new System.Drawing.Point(246, 163);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(68, 44);
             this.NuevoButton.TabIndex = 17;
@@ -215,7 +213,7 @@ namespace Tarea_3_RegistroDeUsuario
             // 
             this.GuardarButton.Image = ((System.Drawing.Image)(resources.GetObject("GuardarButton.Image")));
             this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.GuardarButton.Location = new System.Drawing.Point(270, 166);
+            this.GuardarButton.Location = new System.Drawing.Point(332, 163);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(68, 44);
             this.GuardarButton.TabIndex = 19;
@@ -224,24 +222,11 @@ namespace Tarea_3_RegistroDeUsuario
             this.GuardarButton.UseVisualStyleBackColor = true;
             this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
-            // EditarButton
-            // 
-            this.EditarButton.Image = ((System.Drawing.Image)(resources.GetObject("EditarButton.Image")));
-            this.EditarButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.EditarButton.Location = new System.Drawing.Point(357, 166);
-            this.EditarButton.Name = "EditarButton";
-            this.EditarButton.Size = new System.Drawing.Size(68, 44);
-            this.EditarButton.TabIndex = 20;
-            this.EditarButton.Text = "Editar";
-            this.EditarButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.EditarButton.UseVisualStyleBackColor = true;
-            this.EditarButton.Click += new System.EventHandler(this.EditarButton_Click);
-            // 
             // EliminarButton
             // 
             this.EliminarButton.Image = ((System.Drawing.Image)(resources.GetObject("EliminarButton.Image")));
             this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.EliminarButton.Location = new System.Drawing.Point(448, 166);
+            this.EliminarButton.Location = new System.Drawing.Point(419, 163);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(68, 44);
             this.EliminarButton.TabIndex = 21;
@@ -257,22 +242,33 @@ namespace Tarea_3_RegistroDeUsuario
             this.UsuarioIdNumericUpDown.Size = new System.Drawing.Size(54, 23);
             this.UsuarioIdNumericUpDown.TabIndex = 22;
             // 
-            // RolIdNumericUpDown
+            // RolIdoComboBox
             // 
-            this.RolIdNumericUpDown.Location = new System.Drawing.Point(612, 51);
-            this.RolIdNumericUpDown.Name = "RolIdNumericUpDown";
-            this.RolIdNumericUpDown.Size = new System.Drawing.Size(55, 23);
-            this.RolIdNumericUpDown.TabIndex = 23;
+            this.RolIdoComboBox.FormattingEnabled = true;
+            this.RolIdoComboBox.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.RolIdoComboBox.Location = new System.Drawing.Point(612, 54);
+            this.RolIdoComboBox.Name = "RolIdoComboBox";
+            this.RolIdoComboBox.Size = new System.Drawing.Size(55, 23);
+            this.RolIdoComboBox.TabIndex = 24;
             // 
             // RegistroUsuarioForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 219);
-            this.Controls.Add(this.RolIdNumericUpDown);
+            this.Controls.Add(this.RolIdoComboBox);
             this.Controls.Add(this.UsuarioIdNumericUpDown);
             this.Controls.Add(this.EliminarButton);
-            this.Controls.Add(this.EditarButton);
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.NuevoButton);
@@ -297,7 +293,6 @@ namespace Tarea_3_RegistroDeUsuario
             this.Text = "Registro De Usuario";
             this.Load += new System.EventHandler(this.RegistroUsuarioForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioIdNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RolIdNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,10 +318,9 @@ namespace Tarea_3_RegistroDeUsuario
         private System.Windows.Forms.Button NuevoButton;
         private System.Windows.Forms.Button BuscarButton;
         private System.Windows.Forms.Button GuardarButton;
-        private System.Windows.Forms.Button EditarButton;
         private System.Windows.Forms.Button EliminarButton;
         private System.Windows.Forms.NumericUpDown UsuarioIdNumericUpDown;
-        private System.Windows.Forms.NumericUpDown RolIdNumericUpDown;
+        private System.Windows.Forms.ComboBox RolIdoComboBox;
     }
 }
 

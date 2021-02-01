@@ -23,7 +23,7 @@ namespace Tarea_3_RegistroDeUsuario
         private void Limpiar()
         {
             UsuarioIdNumericUpDown.Value = 0;
-            RolIdNumericUpDown.Value = 0;
+            RolIdoComboBox.Text = string.Empty;
             AliasTextBox.Text = string.Empty;
             NombreTextBox.Text = string.Empty;
             ClaveTextBox.Text = string.Empty;
@@ -60,7 +60,7 @@ namespace Tarea_3_RegistroDeUsuario
             }
 
             user.UsuarioId = Convert.ToInt32(UsuarioIdNumericUpDown.Value);
-            user.RolId = Convert.ToInt32(RolIdNumericUpDown.Value);
+            user.RolId = Convert.ToInt32(RolIdoComboBox.Text);
             user.Alias = AliasTextBox.Text;
             user.Nombre = NombreTextBox.Text;
             user.Clave = ClaveTextBox.Text;
@@ -78,7 +78,7 @@ namespace Tarea_3_RegistroDeUsuario
 
             if (user != null)
             {
-                RolIdNumericUpDown.Value = user.RolId;
+                RolIdoComboBox.Text =Convert.ToString(user.RolId);
                 AliasTextBox.Text = user.Alias;
                 NombreTextBox.Text = user.Nombre;
                 ClaveTextBox.Text = user.Clave;
@@ -116,7 +116,7 @@ namespace Tarea_3_RegistroDeUsuario
 
             if (!Validar())
             {
-                MessageBox.Show("Campos importantes Vacios", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Campos   Vacios", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             
@@ -127,30 +127,22 @@ namespace Tarea_3_RegistroDeUsuario
             }
             catch (Exception)
             {
-                MessageBox.Show("CLave No coiciden, Vuelva a Ingresarlas ", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Clave incorrecta no coinciden en alguno de los dos campos", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 
                 return;
             }
 
-
-            if (!EstaEnLaBD())
-                paso = UsuariosBLL.Guardar(user);
-
-            else
-            {
-
-                MessageBox.Show("No se puede guardar el usuario ya que este existe. Verifique el Id del usuario", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-
-            }
+            paso = UsuariosBLL.Guardar(user);
 
             if (paso)
             {
-                MessageBox.Show("Guardado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+                MessageBox.Show("Transaccion exitosa!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
                 Limpiar();
             }
             else
-                MessageBox.Show("No fue posible guardar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No fue posible guardar o modificar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
 
@@ -189,47 +181,6 @@ namespace Tarea_3_RegistroDeUsuario
             }
             
             return paso;
-        }
-
-        private void EditarButton_Click(object sender, EventArgs e)
-        {
-            Usuarios user;
-            bool paso = false;
-
-            try
-            {
-                user = LlenarClase();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Dato invalido en ID", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (!Validar())
-            {
-                MessageBox.Show("Campos importantes Vacios", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (EstaEnLaBD() )
-            {
-                paso = UsuariosBLL.Modificar(user);
-            }
-            else
-            {
-                MessageBox.Show("No se pudo modificar el rol ya que este no existe!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (paso)
-            {
-                Limpiar();
-                MessageBox.Show("Modificado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-                MessageBox.Show("No fue posible modificar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
         }
 
         private void BuscarButton_Click(object sender, EventArgs e)

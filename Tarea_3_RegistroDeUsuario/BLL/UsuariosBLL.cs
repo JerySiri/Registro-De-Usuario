@@ -30,6 +30,7 @@ namespace Tarea_3_RegistroDeUsuario.BLL
             {
                 contexto.Dispose();
             }
+            
             return paso;
         }
 
@@ -78,9 +79,11 @@ namespace Tarea_3_RegistroDeUsuario.BLL
         {
 
             if (!Existe(user.UsuarioId))
-                return Insertar(user);
+               return Insertar(user);
             else
-                return false;
+                return Modificar(user);
+            
+                
 
         }
 
