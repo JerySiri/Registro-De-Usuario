@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Tarea_3_RegistroDeUsuario.Entidades;
 using Tarea_3_RegistroDeUsuario.DAL;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace Tarea_3_RegistroDeUsuario.BLL
 {
@@ -151,5 +152,25 @@ namespace Tarea_3_RegistroDeUsuario.BLL
             return rol;
         }
 
+        public static List<Roles> GetList(Expression<Func<Roles, bool>> criterio)
+        {
+            List<Roles> Lista = new List<Roles>();
+            Contexto contexto = new Contexto();
+
+            try
+            {
+                
+                Lista = contexto.Roles.Where(criterio).ToList();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+            return Lista;
+        }
     }
 }

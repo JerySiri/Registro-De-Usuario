@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Tarea_3_RegistroDeUsuario.Entidades
 {
-    class Roles
+    public class Roles
     {
         [Key]
         public int rolesId { get; set; }
