@@ -9,14 +9,31 @@ using Tarea_3_RegistroDeUsuario.DAL;
 namespace Tarea_3_RegistroDeUsuario.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20210129032513_Inicial")]
-    partial class Inicial
+    [Migration("20210203032313_inicial")]
+    partial class inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "5.0.2");
+
+            modelBuilder.Entity("Tarea_3_RegistroDeUsuario.Entidades.Roles", b =>
+                {
+                    b.Property<int>("rolesId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("descripcion")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("fechaCreacion")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("rolesId");
+
+                    b.ToTable("Roles");
+                });
 
             modelBuilder.Entity("Tarea_3_RegistroDeUsuario.Entidades.Usuarios", b =>
                 {
