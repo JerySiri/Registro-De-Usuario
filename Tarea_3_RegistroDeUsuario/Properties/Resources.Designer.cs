@@ -123,6 +123,16 @@ namespace Tarea_3_RegistroDeUsuario.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_search_461380__1_ {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_search_461380 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap NuevoButton {
             get {
                 object obj = ResourceManager.GetObject("NuevoButton", resourceCulture);

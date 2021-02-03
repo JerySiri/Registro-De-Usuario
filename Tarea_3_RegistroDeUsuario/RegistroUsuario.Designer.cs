@@ -102,7 +102,7 @@ namespace Tarea_3_RegistroDeUsuario
             // IdRolLabel
             // 
             this.IdRolLabel.AutoSize = true;
-            this.IdRolLabel.Location = new System.Drawing.Point(523, 56);
+            this.IdRolLabel.Location = new System.Drawing.Point(419, 57);
             this.IdRolLabel.Name = "IdRolLabel";
             this.IdRolLabel.Size = new System.Drawing.Size(83, 15);
             this.IdRolLabel.TabIndex = 5;
@@ -191,7 +191,7 @@ namespace Tarea_3_RegistroDeUsuario
             // 
             this.NuevoButton.Image = ((System.Drawing.Image)(resources.GetObject("NuevoButton.Image")));
             this.NuevoButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.NuevoButton.Location = new System.Drawing.Point(246, 163);
+            this.NuevoButton.Location = new System.Drawing.Point(233, 153);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(68, 44);
             this.NuevoButton.TabIndex = 17;
@@ -203,9 +203,9 @@ namespace Tarea_3_RegistroDeUsuario
             // BuscarButton
             // 
             this.BuscarButton.Image = ((System.Drawing.Image)(resources.GetObject("BuscarButton.Image")));
-            this.BuscarButton.Location = new System.Drawing.Point(128, 8);
+            this.BuscarButton.Location = new System.Drawing.Point(128, 12);
             this.BuscarButton.Name = "BuscarButton";
-            this.BuscarButton.Size = new System.Drawing.Size(35, 30);
+            this.BuscarButton.Size = new System.Drawing.Size(26, 23);
             this.BuscarButton.TabIndex = 18;
             this.BuscarButton.UseVisualStyleBackColor = true;
             this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
@@ -214,7 +214,7 @@ namespace Tarea_3_RegistroDeUsuario
             // 
             this.GuardarButton.Image = ((System.Drawing.Image)(resources.GetObject("GuardarButton.Image")));
             this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.GuardarButton.Location = new System.Drawing.Point(332, 163);
+            this.GuardarButton.Location = new System.Drawing.Point(319, 153);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(68, 44);
             this.GuardarButton.TabIndex = 19;
@@ -227,7 +227,7 @@ namespace Tarea_3_RegistroDeUsuario
             // 
             this.EliminarButton.Image = ((System.Drawing.Image)(resources.GetObject("EliminarButton.Image")));
             this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.EliminarButton.Location = new System.Drawing.Point(419, 163);
+            this.EliminarButton.Location = new System.Drawing.Point(406, 153);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(68, 44);
             this.EliminarButton.TabIndex = 21;
@@ -257,16 +257,16 @@ namespace Tarea_3_RegistroDeUsuario
             "8",
             "9",
             "10"});
-            this.RolIdoComboBox.Location = new System.Drawing.Point(612, 54);
+            this.RolIdoComboBox.Location = new System.Drawing.Point(508, 54);
             this.RolIdoComboBox.Name = "RolIdoComboBox";
-            this.RolIdoComboBox.Size = new System.Drawing.Size(55, 23);
+            this.RolIdoComboBox.Size = new System.Drawing.Size(159, 23);
             this.RolIdoComboBox.TabIndex = 24;
             // 
             // RegistroUsuarioForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 219);
+            this.ClientSize = new System.Drawing.Size(682, 207);
             this.Controls.Add(this.RolIdoComboBox);
             this.Controls.Add(this.UsuarioIdNumericUpDown);
             this.Controls.Add(this.EliminarButton);
