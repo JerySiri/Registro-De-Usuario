@@ -180,6 +180,7 @@ namespace Tarea_3_RegistroDeUsuario
             // 
             // FechaIngresoDateTimePicker
             // 
+            this.FechaIngresoDateTimePicker.CustomFormat = "dd/mm/yyyy";
             this.FechaIngresoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.FechaIngresoDateTimePicker.Location = new System.Drawing.Point(583, 115);
             this.FechaIngresoDateTimePicker.Name = "FechaIngresoDateTimePicker";
