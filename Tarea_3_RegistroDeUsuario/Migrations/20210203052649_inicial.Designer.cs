@@ -9,7 +9,7 @@ using Tarea_3_RegistroDeUsuario.DAL;
 namespace Tarea_3_RegistroDeUsuario.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20210203032313_inicial")]
+    [Migration("20210203052649_inicial")]
     partial class inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -62,9 +62,23 @@ namespace Tarea_3_RegistroDeUsuario.Migrations
                     b.Property<int>("RolId")
                         .HasColumnType("INTEGER");
 
+                    b.Property<int?>("RolesId")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("UsuarioId");
 
+                    b.HasIndex("RolesId");
+
                     b.ToTable("Usuarios");
+                });
+
+            modelBuilder.Entity("Tarea_3_RegistroDeUsuario.Entidades.Usuarios", b =>
+                {
+                    b.HasOne("Tarea_3_RegistroDeUsuario.Entidades.Roles", "role")
+                        .WithMany()
+                        .HasForeignKey("RolesId");
+
+                    b.Navigation("role");
                 });
 #pragma warning restore 612, 618
         }
