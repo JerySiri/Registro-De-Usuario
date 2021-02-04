@@ -117,12 +117,8 @@ namespace Tarea_3_RegistroDeUsuario
             bool paso = false;
 
             if (!Validar())
-            {
-                MessageBox.Show("Campos   Vacios", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-            }
             
-
             try
             {
                 user = LlenarClase();
@@ -138,9 +134,7 @@ namespace Tarea_3_RegistroDeUsuario
 
             if (paso)
             {
-                
                 MessageBox.Show("Transaccion exitosa!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
                 Limpiar();
             }
             else
