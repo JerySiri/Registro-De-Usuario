@@ -24,12 +24,12 @@ namespace Tarea_3_RegistroDeUsuario
         {
             UsuarioIdNumericUpDown.Value = 0;
             RolIdoComboBox.Text = string.Empty;
-            AliasTextBox.Text = string.Empty;
-            NombreTextBox.Text = string.Empty;
-            ClaveTextBox.Text = string.Empty;
-            ConfirmaClaveTextBox.Text = string.Empty;
+            AliasTextBox.Clear();
+            NombreTextBox.Clear();
+            ClaveTextBox.Clear();
+            ConfirmaClaveTextBox.Clear();
             ActivoCheckBox.Checked = false;
-            EmailTextBox.Text = string.Empty;
+            EmailTextBox.Clear();
             FechaIngresoDateTimePicker.Value = DateTime.Now;
         }
 
@@ -38,8 +38,8 @@ namespace Tarea_3_RegistroDeUsuario
             if (ClaveTextBox.Text != ConfirmaClaveTextBox.Text)
             {
 
-                ClaveTextBox.Text = string.Empty;
-                ConfirmaClaveTextBox.Text = string.Empty;
+                ClaveTextBox.Clear();
+                ConfirmaClaveTextBox.Clear();
 
                 throw new Exception("Clave incorrecta en uno de los dos parametros");
             }
