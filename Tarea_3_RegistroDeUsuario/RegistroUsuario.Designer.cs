@@ -51,7 +51,7 @@ namespace Tarea_3_RegistroDeUsuario
             this.GuardarButton = new System.Windows.Forms.Button();
             this.EliminarButton = new System.Windows.Forms.Button();
             this.UsuarioIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.RolIdoComboBox = new System.Windows.Forms.ComboBox();
+            this.RolIdComboBox = new System.Windows.Forms.ComboBox();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
@@ -246,10 +246,10 @@ namespace Tarea_3_RegistroDeUsuario
             this.UsuarioIdNumericUpDown.Size = new System.Drawing.Size(54, 23);
             this.UsuarioIdNumericUpDown.TabIndex = 22;
             // 
-            // RolIdoComboBox
+            // RolIdComboBox
             // 
-            this.RolIdoComboBox.FormattingEnabled = true;
-            this.RolIdoComboBox.Items.AddRange(new object[] {
+            this.RolIdComboBox.FormattingEnabled = true;
+            this.RolIdComboBox.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
@@ -260,10 +260,10 @@ namespace Tarea_3_RegistroDeUsuario
             "8",
             "9",
             "10"});
-            this.RolIdoComboBox.Location = new System.Drawing.Point(508, 54);
-            this.RolIdoComboBox.Name = "RolIdoComboBox";
-            this.RolIdoComboBox.Size = new System.Drawing.Size(159, 23);
-            this.RolIdoComboBox.TabIndex = 24;
+            this.RolIdComboBox.Location = new System.Drawing.Point(508, 54);
+            this.RolIdComboBox.Name = "RolIdComboBox";
+            this.RolIdComboBox.Size = new System.Drawing.Size(159, 23);
+            this.RolIdComboBox.TabIndex = 24;
             // 
             // MyErrorProvider
             // 
@@ -274,7 +274,7 @@ namespace Tarea_3_RegistroDeUsuario
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(682, 207);
-            this.Controls.Add(this.RolIdoComboBox);
+            this.Controls.Add(this.RolIdComboBox);
             this.Controls.Add(this.UsuarioIdNumericUpDown);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.GuardarButton);
@@ -329,7 +329,7 @@ namespace Tarea_3_RegistroDeUsuario
         private System.Windows.Forms.Button GuardarButton;
         private System.Windows.Forms.Button EliminarButton;
         private System.Windows.Forms.NumericUpDown UsuarioIdNumericUpDown;
-        private System.Windows.Forms.ComboBox RolIdoComboBox;
+        private System.Windows.Forms.ComboBox RolIdComboBox;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
     }
 }

@@ -23,7 +23,7 @@ namespace Tarea_3_RegistroDeUsuario
         private void Limpiar()
         {
             UsuarioIdNumericUpDown.Value = 0;
-            RolIdoComboBox.Text = string.Empty;
+            RolIdComboBox.Text = string.Empty;
             AliasTextBox.Clear();
             NombreTextBox.Clear();
             ClaveTextBox.Clear();
@@ -60,7 +60,7 @@ namespace Tarea_3_RegistroDeUsuario
             }
 
             user.UsuarioId = (int)UsuarioIdNumericUpDown.Value ;
-            user.RolId = Convert.ToInt32(RolIdoComboBox.Text);
+            user.RolId = Convert.ToInt32(RolIdComboBox.Text);
             user.Alias = AliasTextBox.Text;
             user.Nombre = NombreTextBox.Text;
             user.Clave = ClaveTextBox.Text;
@@ -78,7 +78,7 @@ namespace Tarea_3_RegistroDeUsuario
 
             if (user != null)
             {
-                RolIdoComboBox.Text =Convert.ToString(user.RolId);
+                RolIdComboBox.Text =Convert.ToString(user.RolId);
                 AliasTextBox.Text = user.Alias;
                 NombreTextBox.Text = user.Nombre;
                 ClaveTextBox.Text = user.Clave;
@@ -101,9 +101,9 @@ namespace Tarea_3_RegistroDeUsuario
 
         private void RegistroUsuarioForm_Load(object sender, EventArgs e)
         {
-            RolIdoComboBox.DataSource = RolesBLL.GetRoles();
-            RolIdoComboBox.DisplayMember = "descripcion";
-            RolIdoComboBox.ValueMember = "rolesId";
+            RolIdComboBox.DataSource = RolesBLL.GetRoles();
+            RolIdComboBox.DisplayMember = "descripcion";
+            RolIdComboBox.ValueMember = "rolesId";
         }
 
         private void NuevoButton_Click(object sender, EventArgs e)
