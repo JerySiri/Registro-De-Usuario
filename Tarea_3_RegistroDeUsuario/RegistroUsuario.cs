@@ -59,7 +59,7 @@ namespace Tarea_3_RegistroDeUsuario
                 throw;
             }
 
-            user.UsuarioId = Convert.ToInt32(UsuarioIdNumericUpDown.Value);
+            user.UsuarioId = (int)UsuarioIdNumericUpDown.Value;
             user.RolId = Convert.ToInt32(RolIdoComboBox.Text);
             user.Alias = AliasTextBox.Text;
             user.Nombre = NombreTextBox.Text;
@@ -74,7 +74,7 @@ namespace Tarea_3_RegistroDeUsuario
         private bool LlenarCampos(int id)
         {
 
-            Usuarios user = UsuariosBLL.Buscar(Convert.ToInt32(UsuarioIdNumericUpDown.Value));
+            Usuarios user = UsuariosBLL.Buscar((int)UsuarioIdNumericUpDown.Value);
 
             if (user != null)
             {
@@ -95,7 +95,7 @@ namespace Tarea_3_RegistroDeUsuario
 
         private bool EstaEnLaBaseDeDatos()
         {
-            Usuarios user = UsuariosBLL.Buscar(Convert.ToInt32(UsuarioIdNumericUpDown.Value));
+            Usuarios user = UsuariosBLL.Buscar((int)UsuarioIdNumericUpDown.Value);
             return (user != null);
         }
 
@@ -188,7 +188,7 @@ namespace Tarea_3_RegistroDeUsuario
         private void BuscarButton_Click(object sender, EventArgs e)
         {
 
-            if (LlenarCampos(Convert.ToInt32(UsuarioIdNumericUpDown.Value)))
+            if (LlenarCampos((int)UsuarioIdNumericUpDown.Value))
             {
                 MessageBox.Show("Encontrado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -198,7 +198,7 @@ namespace Tarea_3_RegistroDeUsuario
 
         private void EliminarButton_Click(object sender, EventArgs e)
         {
-            if (UsuariosBLL.Eliminar(Convert.ToInt32(UsuarioIdNumericUpDown.Value)))
+            if (UsuariosBLL.Eliminar((int)UsuarioIdNumericUpDown.Value))
                 MessageBox.Show("Eliminado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
                 MessageBox.Show("No pudo ser eliminado", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
