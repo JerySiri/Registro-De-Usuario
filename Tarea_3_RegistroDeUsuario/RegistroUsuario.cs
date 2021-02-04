@@ -35,9 +35,7 @@ namespace Tarea_3_RegistroDeUsuario
 
         private Usuarios LlenarClase()
         {
-            
             Usuarios user = new Usuarios();
-
             user.UsuarioId = (int)UsuarioIdNumericUpDown.Value ;
             user.RolId = Convert.ToInt32(RolIdComboBox.Text);
             user.Alias = AliasTextBox.Text;
@@ -50,13 +48,8 @@ namespace Tarea_3_RegistroDeUsuario
 
             return user;
         }
-        private bool LlenarCampos(int id)
+        private void LlenarCampos(Usuarios user)
         {
-
-            Usuarios user = UsuariosBLL.Buscar( (int)UsuarioIdNumericUpDown.Value) ;
-
-            if (user != null)
-            {
                 RolIdComboBox.Text =Convert.ToString(user.RolId);
                 AliasTextBox.Text = user.Alias;
                 NombreTextBox.Text = user.Nombre;
@@ -65,10 +58,6 @@ namespace Tarea_3_RegistroDeUsuario
                 ActivoCheckBox.Checked = user.Activo;
                 EmailTextBox.Text = user.Email;
                 FechaIngresoDateTimePicker.Value = user.FechaIngreso;
-                return true;
-            }
-            else
-                return false;
         }
 
 
@@ -98,16 +87,7 @@ namespace Tarea_3_RegistroDeUsuario
             if (!Validar())
                 return;
             
-            try
-            {
-                user = LlenarClase();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Clave incorrecta no coinciden en alguno de los dos campos", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
-                return;
-            }
+            user = LlenarClase();
 
             paso = UsuariosBLL.Guardar(user);
 
@@ -127,7 +107,12 @@ namespace Tarea_3_RegistroDeUsuario
 
             if (ClaveTextBox.Text != ConfirmaClaveTextBox.Text)
             {
-                MyErrorProvider.SetError(NombreTextBox, "Los campos Clave y confrimar Clave no pueden ser diferentes");
+                MyErrorProvider.SetError(ClaveTextBox, "Los campos Clave y confrimar Clave no pueden ser diferentes");
+                MyErrorProvider.SetError(ConfirmaClaveTextBox, "Los campos Clave y confrimar Clave no pueden ser diferentes");
+
+                ClaveTextBox.Clear();
+                ConfirmaClaveTextBox.Clear();
+
                 NombreTextBox.Focus();
                 paso = false;
             }
@@ -168,15 +153,18 @@ namespace Tarea_3_RegistroDeUsuario
             }
             
 
+
             return paso;
         }
 
         private void BuscarButton_Click(object sender, EventArgs e)
         {
-
-            if (LlenarCampos( (int)UsuarioIdNumericUpDown.Value) )
+            Usuarios user = UsuariosBLL.Buscar((int)UsuarioIdNumericUpDown.Value);
+ 
+            if ( EstaEnLaBaseDeDatos() )
             {
                 MessageBox.Show("Encontrado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LlenarCampos(user);
             }
             else
                 MessageBox.Show("Usuario No existe.", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
