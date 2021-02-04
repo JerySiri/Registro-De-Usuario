@@ -154,30 +154,35 @@ namespace Tarea_3_RegistroDeUsuario
 
             if ( NombreTextBox.Text == String.Empty)
             {
+                MyErrorProvider.SetError(NombreTextBox, "El Campo nombre no puede estar vacio");
                 NombreTextBox.Focus();
                 paso = false;
             }
 
             if (AliasTextBox.Text == String.Empty)
             {
+                MyErrorProvider.SetError(AliasTextBox, "El Campo alias no puede estar vacio");
                 AliasTextBox.Focus();
                 paso = false;
             }
 
             if (ClaveTextBox.Text == String.Empty)
             {
+                MyErrorProvider.SetError(ClaveTextBox, "El Campo Clave no puede estar vacio");
                 ClaveTextBox.Focus();
                 paso = false;
             }
 
             if ( ConfirmaClaveTextBox.Text == String.Empty)
             {
+                MyErrorProvider.SetError(ConfirmaClaveTextBox, "El Campo Confirmar Clave no puede estar vacio");
                 ConfirmaClaveTextBox.Focus();
                 paso = false;
             }
 
             if (EmailTextBox.Text == String.Empty)
             {
+                MyErrorProvider.SetError(EmailTextBox, "El Campo E-mail Clave no puede estar vacio");
                 EmailTextBox.Focus();
                 paso = false;
             }

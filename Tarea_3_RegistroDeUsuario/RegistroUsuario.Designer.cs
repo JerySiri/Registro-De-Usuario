@@ -29,6 +29,7 @@ namespace Tarea_3_RegistroDeUsuario
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroUsuarioForm));
             this.NombreLabel = new System.Windows.Forms.Label();
             this.AliasLabel = new System.Windows.Forms.Label();
@@ -51,7 +52,9 @@ namespace Tarea_3_RegistroDeUsuario
             this.EliminarButton = new System.Windows.Forms.Button();
             this.UsuarioIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.RolIdoComboBox = new System.Windows.Forms.ComboBox();
+            this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioIdNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // NombreLabel
@@ -262,6 +265,10 @@ namespace Tarea_3_RegistroDeUsuario
             this.RolIdoComboBox.Size = new System.Drawing.Size(159, 23);
             this.RolIdoComboBox.TabIndex = 24;
             // 
+            // MyErrorProvider
+            // 
+            this.MyErrorProvider.ContainerControl = this;
+            // 
             // RegistroUsuarioForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -294,6 +301,7 @@ namespace Tarea_3_RegistroDeUsuario
             this.Text = "Registro De Usuario";
             this.Load += new System.EventHandler(this.RegistroUsuarioForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioIdNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -322,6 +330,7 @@ namespace Tarea_3_RegistroDeUsuario
         private System.Windows.Forms.Button EliminarButton;
         private System.Windows.Forms.NumericUpDown UsuarioIdNumericUpDown;
         private System.Windows.Forms.ComboBox RolIdoComboBox;
+        private System.Windows.Forms.ErrorProvider MyErrorProvider;
     }
 }
 
