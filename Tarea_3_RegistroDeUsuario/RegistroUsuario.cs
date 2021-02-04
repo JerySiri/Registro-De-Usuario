@@ -151,8 +151,14 @@ namespace Tarea_3_RegistroDeUsuario
                 EmailTextBox.Focus();
                 paso = false;
             }
-            
 
+            if (UsuariosBLL.ExisteAlias(AliasTextBox.Text))
+            {
+                MyErrorProvider.SetError(AliasTextBox, "El Campo alias ya existe");
+                AliasTextBox.Focus();
+                AliasTextBox.Clear();
+                paso = false;
+            }
 
             return paso;
         }
