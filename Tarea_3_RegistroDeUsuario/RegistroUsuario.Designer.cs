@@ -1,4 +1,7 @@
-﻿
+﻿using Tarea_3_RegistroDeUsuario.BLL;
+using Tarea_3_RegistroDeUsuario.Entidades;
+using System;
+
 namespace Tarea_3_RegistroDeUsuario
 {
     partial class RegistroUsuarioForm
@@ -249,17 +252,6 @@ namespace Tarea_3_RegistroDeUsuario
             // RolIdComboBox
             // 
             this.RolIdComboBox.FormattingEnabled = true;
-            this.RolIdComboBox.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10"});
             this.RolIdComboBox.Location = new System.Drawing.Point(508, 54);
             this.RolIdComboBox.Name = "RolIdComboBox";
             this.RolIdComboBox.Size = new System.Drawing.Size(159, 23);
@@ -269,6 +261,23 @@ namespace Tarea_3_RegistroDeUsuario
             // 
             this.MyErrorProvider.ContainerControl = this;
             // 
+
+            if ((UsuariosBLL.Buscar(1) == null) && (UsuariosBLL.Buscar(2) == null))
+            {
+                Roles rol = new Roles();
+
+                rol.rolesId = 1;
+                rol.descripcion = "Administrador";
+                rol.fechaCreacion = DateTime.Now;
+                RolesBLL.Guardar(rol);
+
+                rol.rolesId = 2;
+                rol.descripcion = "Estudiante";
+                rol.fechaCreacion = DateTime.Now;
+                RolesBLL.Guardar(rol);
+            }
+            
+
             // RegistroUsuarioForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);

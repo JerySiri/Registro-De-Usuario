@@ -36,7 +36,7 @@ namespace Tarea_3_RegistroDeUsuario
         private Usuarios LlenarClase()
         {
             Usuarios user = new Usuarios();
-            user.UsuarioId = (int)UsuarioIdNumericUpDown.Value ;
+            user.UsuarioId = (int)UsuarioIdNumericUpDown.Value;
             user.RolId = Convert.ToInt32(RolIdComboBox.Text);
             user.Alias = AliasTextBox.Text;
             user.Nombre = NombreTextBox.Text;
@@ -50,7 +50,7 @@ namespace Tarea_3_RegistroDeUsuario
         }
         private void LlenarCampos(Usuarios user)
         {
-                RolIdComboBox.Text =Convert.ToString(user.RolId);
+                RolIdComboBox.Text = Convert.ToString(user.RolId);
                 AliasTextBox.Text = user.Alias;
                 NombreTextBox.Text = user.Nombre;
                 ClaveTextBox.Text = user.Clave;

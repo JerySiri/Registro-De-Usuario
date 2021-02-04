@@ -95,6 +95,7 @@ namespace Tarea_3_RegistroDeUsuario.BLL
 
             return encontrado;
         }
+
         public static bool Guardar(Roles rol)
         {
 
@@ -168,6 +169,7 @@ namespace Tarea_3_RegistroDeUsuario.BLL
             }
             return lista;
         }
+
 
         public static Roles Buscar(int id)
         {

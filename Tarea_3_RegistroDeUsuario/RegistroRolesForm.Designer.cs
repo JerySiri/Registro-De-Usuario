@@ -166,6 +166,7 @@ namespace Tarea_3_RegistroDeUsuario
             this.ResumeLayout(false);
             this.PerformLayout();
 
+
         }
 
         #endregion
