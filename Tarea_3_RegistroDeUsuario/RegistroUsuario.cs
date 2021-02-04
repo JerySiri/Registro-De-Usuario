@@ -33,31 +33,10 @@ namespace Tarea_3_RegistroDeUsuario
             FechaIngresoDateTimePicker.Value = DateTime.Now;
         }
 
-        private void ConfirmarClave()
-        {
-            if (ClaveTextBox.Text != ConfirmaClaveTextBox.Text)
-            {
-
-                ClaveTextBox.Clear();
-                ConfirmaClaveTextBox.Clear();
-
-                throw new Exception("Clave incorrecta en uno de los dos parametros");
-            }
-        }
         private Usuarios LlenarClase()
         {
             
             Usuarios user = new Usuarios();
-
-
-            try
-            {
-                ConfirmarClave();
-            }
-            catch (Exception)
-            {
-                throw;
-            }
 
             user.UsuarioId = (int)UsuarioIdNumericUpDown.Value ;
             user.RolId = Convert.ToInt32(RolIdComboBox.Text);
@@ -146,6 +125,13 @@ namespace Tarea_3_RegistroDeUsuario
         {
             bool paso = true;
 
+            if (ClaveTextBox.Text != ConfirmaClaveTextBox.Text)
+            {
+                MyErrorProvider.SetError(NombreTextBox, "Los campos Clave y confrimar Clave no pueden ser diferentes");
+                NombreTextBox.Focus();
+                paso = false;
+            }
+
             if ( NombreTextBox.Text == String.Empty)
             {
                 MyErrorProvider.SetError(NombreTextBox, "El Campo nombre no puede estar vacio");
@@ -181,6 +167,7 @@ namespace Tarea_3_RegistroDeUsuario
                 paso = false;
             }
             
+
             return paso;
         }
 
