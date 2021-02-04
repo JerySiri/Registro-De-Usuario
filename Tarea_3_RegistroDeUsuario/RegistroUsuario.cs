@@ -93,7 +93,7 @@ namespace Tarea_3_RegistroDeUsuario
         }
 
 
-        private bool EstaEnLaBD()
+        private bool EstaEnLaBaseDeDatos()
         {
             Usuarios user = UsuariosBLL.Buscar(Convert.ToInt32(UsuarioIdNumericUpDown.Value));
             return (user != null);
