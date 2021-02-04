@@ -130,6 +130,44 @@ namespace Tarea_3_RegistroDeUsuario.BLL
             }
             return paso;
         }
+        public static List<Roles> GetList(Expression<Func<Roles, bool>> criterio)
+        {
+            List<Roles> Lista = new List<Roles>();
+            Contexto contexto = new Contexto();
+
+            try
+            {
+
+                Lista = contexto.Roles.Where(criterio).ToList();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+            return Lista;
+        }
+        public static List<Roles> GetRoles()
+        {
+            List<Roles> lista = new List<Roles>();
+            Contexto contexto = new Contexto();
+            try
+            {
+                lista = contexto.Roles.ToList();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+            return lista;
+        }
 
         public static Roles Buscar(int id)
         {
@@ -152,44 +190,6 @@ namespace Tarea_3_RegistroDeUsuario.BLL
             return rol;
         }
 
-        public static List<Roles> GetList(Expression<Func<Roles, bool>> criterio)
-        {
-            List<Roles> Lista = new List<Roles>();
-            Contexto contexto = new Contexto();
-
-            try
-            {
-                
-                Lista = contexto.Roles.Where(criterio).ToList();
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                contexto.Dispose();
-            }
-            return Lista;
-        }
-
-        public static List<Roles> GetRoles()
-        {
-            List<Roles> lista = new List<Roles>();
-            Contexto contexto = new Contexto();
-            try
-            {
-                lista = contexto.Roles.ToList();
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                contexto.Dispose();
-            }
-            return lista;
-        }
+        
     }
 }

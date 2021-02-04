@@ -112,6 +112,26 @@ namespace Tarea_3_RegistroDeUsuario.BLL
             }
             return paso;
         }
+
+        public static List<Usuarios> GetUsuario()
+        {
+            List<Usuarios> lista = new List<Usuarios>();
+            Contexto contexto = new Contexto();
+            try
+            {
+                lista = contexto.Usuarios.ToList();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+            return lista;
+        }
+
         public static List<Usuarios> GetList(Expression<Func<Usuarios, bool>> criterio)
         {
             List<Usuarios> Lista = new List<Usuarios>();
@@ -131,25 +151,6 @@ namespace Tarea_3_RegistroDeUsuario.BLL
                 contexto.Dispose();
             }
             return Lista;
-        }
-
-        public static List<Usuarios> GetUsuario()
-        {
-            List<Usuarios> lista = new List<Usuarios>();
-            Contexto contexto = new Contexto();
-            try
-            {
-                lista = contexto.Usuarios.ToList();
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                contexto.Dispose();
-            }
-            return lista;
         }
 
         public static Usuarios Buscar(int id)

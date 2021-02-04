@@ -104,7 +104,6 @@ namespace Tarea_3_RegistroDeUsuario
             RolIdoComboBox.DataSource = RolesBLL.GetRoles();
             RolIdoComboBox.DisplayMember = "descripcion";
             RolIdoComboBox.ValueMember = "rolesId";
-
         }
 
         private void NuevoButton_Click(object sender, EventArgs e)
