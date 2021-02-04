@@ -74,6 +74,8 @@ namespace Tarea_3_RegistroDeUsuario.BLL
 
             return encontrado;
         }
+
+
         public static bool ExisteDescripcion(string descripcion)
         {
 

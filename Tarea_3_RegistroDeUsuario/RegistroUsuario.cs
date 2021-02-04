@@ -18,12 +18,26 @@ namespace Tarea_3_RegistroDeUsuario
         public RegistroUsuarioForm()
         {
             InitializeComponent();
+            if ((UsuariosBLL.Buscar(1) == null) && (UsuariosBLL.Buscar(2) == null))
+            {
+                Roles rol = new Roles();
+
+                rol.rolesId = 1;
+                rol.descripcion = "Administrador";
+                rol.fechaCreacion = DateTime.Now;
+                RolesBLL.Guardar(rol);
+
+                rol.rolesId = 2;
+                rol.descripcion = "Estudiante";
+                rol.fechaCreacion = DateTime.Now;
+                RolesBLL.Guardar(rol);
+            }
         }
 
         private void Limpiar()
         {
             UsuarioIdNumericUpDown.Value = 0;
-            RolIdComboBox.Text = string.Empty;
+            RolIdComboBox.SelectedIndex = 1;
             AliasTextBox.Clear();
             NombreTextBox.Clear();
             ClaveTextBox.Clear();
@@ -36,8 +50,9 @@ namespace Tarea_3_RegistroDeUsuario
         private Usuarios LlenarClase()
         {
             Usuarios user = new Usuarios();
+
             user.UsuarioId = (int)UsuarioIdNumericUpDown.Value;
-            user.RolId = Convert.ToInt32(RolIdComboBox.Text);
+            user.RolId = RolIdComboBox.SelectedIndex;
             user.Alias = AliasTextBox.Text;
             user.Nombre = NombreTextBox.Text;
             user.Clave = ClaveTextBox.Text;
@@ -50,7 +65,7 @@ namespace Tarea_3_RegistroDeUsuario
         }
         private void LlenarCampos(Usuarios user)
         {
-                RolIdComboBox.Text = Convert.ToString(user.RolId);
+                RolIdComboBox.SelectedIndex = user.RolId ;
                 AliasTextBox.Text = user.Alias;
                 NombreTextBox.Text = user.Nombre;
                 ClaveTextBox.Text = user.Clave;
@@ -152,7 +167,7 @@ namespace Tarea_3_RegistroDeUsuario
                 paso = false;
             }
 
-            if (UsuariosBLL.ExisteAlias(AliasTextBox.Text))
+            if (UsuariosBLL.ExisteAlias(AliasTextBox.Text,(int)UsuarioIdNumericUpDown.Value))
             {
                 MyErrorProvider.SetError(AliasTextBox, "El Campo alias ya existe");
                 AliasTextBox.Focus();

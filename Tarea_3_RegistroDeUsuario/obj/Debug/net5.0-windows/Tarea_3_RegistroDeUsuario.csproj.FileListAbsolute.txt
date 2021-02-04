@@ -54,5 +54,5 @@ C:\Users\JeryJ\source\repos\Tarea3_RegistroDeUsuario\Tarea_3_RegistroDeUsuario\o
 C:\Users\JeryJ\source\repos\Tarea3_RegistroDeUsuario\Tarea_3_RegistroDeUsuario\obj\Debug\net5.0-windows\Tarea_3_RegistroDeUsuario.pdb
 C:\Users\JeryJ\source\repos\Tarea3_RegistroDeUsuario\Tarea_3_RegistroDeUsuario\obj\Debug\net5.0-windows\Tarea_3_RegistroDeUsuario.genruntimeconfig.cache
 C:\Users\JeryJ\source\repos\Tarea3_RegistroDeUsuario\Tarea_3_RegistroDeUsuario\obj\Debug\net5.0-windows\Tarea_3_RegistroDeUsuario.Properties.Resources.resources
-C:\Users\JeryJ\source\repos\Tarea3_RegistroDeUsuario\Tarea_3_RegistroDeUsuario\bin\Debug\net5.0-windows\BD_Usuarios.db
 C:\Users\JeryJ\source\repos\Tarea3_RegistroDeUsuario\Tarea_3_RegistroDeUsuario\obj\Debug\net5.0-windows\Tarea_3_RegistroDeUsuario.RegistroRolesForm.resources
+C:\Users\JeryJ\source\repos\Tarea3_RegistroDeUsuario\Tarea_3_RegistroDeUsuario\bin\Debug\net5.0-windows\BD_Usuarios.db

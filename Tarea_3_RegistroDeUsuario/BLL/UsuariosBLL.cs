@@ -119,6 +119,7 @@ namespace Tarea_3_RegistroDeUsuario.BLL
             Contexto contexto = new Contexto();
             try
             {
+                
                 lista = contexto.Usuarios.ToList();
             }
             catch (Exception)
@@ -174,7 +175,7 @@ namespace Tarea_3_RegistroDeUsuario.BLL
             return user;
         }
 
-        public static bool ExisteAlias (string alias)
+        public static bool ExisteAlias (string alias, int id)
         {
             Contexto contexto = new Contexto();
             bool encontrado = false;
@@ -191,7 +192,18 @@ namespace Tarea_3_RegistroDeUsuario.BLL
             {
                 contexto.Dispose();
             }
-            
+
+            if (encontrado)
+            {
+                Usuarios user = Buscar(id);
+                
+                if (user == null)
+                    return true;
+                
+                if(user.Alias == alias)
+                    encontrado = false;
+            }
+                
             return encontrado;
         }
     }

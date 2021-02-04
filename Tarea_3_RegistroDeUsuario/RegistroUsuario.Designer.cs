@@ -261,23 +261,6 @@ namespace Tarea_3_RegistroDeUsuario
             // 
             this.MyErrorProvider.ContainerControl = this;
             // 
-
-            if ((UsuariosBLL.Buscar(1) == null) && (UsuariosBLL.Buscar(2) == null))
-            {
-                Roles rol = new Roles();
-
-                rol.rolesId = 1;
-                rol.descripcion = "Administrador";
-                rol.fechaCreacion = DateTime.Now;
-                RolesBLL.Guardar(rol);
-
-                rol.rolesId = 2;
-                rol.descripcion = "Estudiante";
-                rol.fechaCreacion = DateTime.Now;
-                RolesBLL.Guardar(rol);
-            }
-            
-
             // RegistroUsuarioForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
